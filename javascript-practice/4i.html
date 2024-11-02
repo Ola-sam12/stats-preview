@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Practice</title>
+</head>
+<body>
+ <button onclick="
+  cartQuantity += 4
+  console.log(`Cart Quantity: ${cartQuantity}`);
+
+  if (cartQuantity > 10) {
+      alert('The cart is full');
+    }
+
+  ">+4</button>
+ <button onclick="
+  cartQuantity += 5
+  console.log(`Cart Quantity: ${cartQuantity}`);
+
+  if (cartQuantity > 10) {
+      alert('The cart is full');
+    }
+
+ ">+5</button>
+  <button onclick="
+  cartQuantity -= 2
+  console.log(`Cart Quantity: ${cartQuantity}`);
+
+    if (cartQuantity < 0) {
+      alert('Not enough items in the cart');
+    }
+
+  ">
+  Remove from cart 
+ </button>
+
+  <script>
+
+    let cartQuantity = 0;
+
+    const name = 'samuel'
+    console.log(`My name is: ${name}`);
+    const cost = 5+2*3+9
+    console.log(cost);
+    console.log(`cost of food: $${cost}`);
+    const costTax = (5+2*3+9 )* 0.1
+    console.log(`Tax (${(5+5)}%): $${costTax}`);
+    const totalCost = 20+2
+    console.log(`Total cost: $${totalCost}`);
+  </script>
+</body>
+</html>

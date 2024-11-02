@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>coinflip Game</title>
+</head>
+<body>
+
+  <button onclick="
+  playGame();
+  onPage();
+    ">
+    heads
+  </button>
+  
+  <button onclick="
+  playGame();
+  ">
+    tails
+  </button>
+
+  <p class="js-result"></p>
+  <p class="js-score"></p>
+
+<p>
+  <button onclick="
+  score.wins = 0,
+  score.losses = 0
+   localStorage.removeItem('score')
+  ">Rest Button</button>
+</p>
+
+   <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+          wins: 0,
+          losses: 0
+        };
+
+        /*
+      if (score === null) {
+        score = {
+          wins: 0,
+          losses: 0
+        }
+      }
+      */
+     onPage();
+     function onPage() {
+      const predict = playGame();
+        document.querySelector('.js-result').innerHTML = `${predict}`
+
+        document.querySelector('.js-score'). innerHTML = `wins: ${score.wins} losses: ${score.losses}`;
+     };
+      
+
+      function playGame(predict) {
+        const randomNumber = Math.random();
+
+        let result = randomNumber <= 0.5 ? 'heads' : 'tails';
+
+        console.log(predict = result === 'heads' ? 'you win' : 'you lose');
+
+        if (predict === 'you win') {
+          score.wins++;
+        } else {
+          score.losses++;
+        }
+        
+       localStorage.setItem('score', JSON.stringify(score));
+
+       return predict;
+      };
+       
+
+  </script>
+</body>
+</html>

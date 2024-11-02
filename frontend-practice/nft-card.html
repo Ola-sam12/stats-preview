@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NFT Card</title>
+    <style>
+        .back-cover{
+            background-color: hsl(217, 54%, 11%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 110px;
+            bottom: 110px;
+            left: 170px;
+            right: 170px;
+        }
+        .container{
+            background-color:  hsl(216, 50%, 16%);
+            display: flex;
+            flex-direction:column;
+            padding: 25px 25px 25px 25px;
+            border-radius: 20px;
+        }
+        .equilibrium-image{
+            width: 340px;
+            height: 340px;
+            border-radius: 10px;
+        }
+        .subject{
+            font-weight: 500;
+            color: white;
+            font-size: 25px;
+            margin: 20px 0 0 0;
+        }
+        .text{
+            font-size: 18px;
+            width: 290px;
+            color: hsl(215, 51%, 70%);
+            line-height: 25px;
+            margin: 20px 0 20px 0;
+        }
+        .ethereum{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 18px;
+            padding-bottom: 24px;
+        }
+        .balance{
+            color:  hsl(178, 100%, 50%);
+        }
+        .time{
+           color: hsl(215, 51%, 70%); 
+        }
+        .creator{
+            display: flex;
+            align-items: center;
+            border-top: 2px solid  hsl(215, 32%, 27%);
+            padding-top: 20px;
+        }
+        .creator-image{
+            font-size: 18px;
+            width: 40px;
+            border-radius: 40px;
+            border: 1px solid white;
+        }
+        .creation{
+            margin-left: 15px;
+            color:  hsl(215, 51%, 70%);
+        }
+        span{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-cover">
+        <div class="container">
+            <img class="equilibrium-image" src="image/image-equilibrium.jpg" alt="">
+            <p class="subject">
+                Equilibrium #3429
+            </p>
+            <p class="text">
+                Our Equilibrium collection promotes
+                balance and calm
+            </p>
+            <div class="ethereum">
+                <div class="balance">
+                    <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+                    0.041ETH
+                </div>
+                <div class="time">
+                    <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+                    3 days left
+                </div>
+                </div>
+                <div class="creator">
+                    <img class="creator-image" src="image/image-avatar.png" alt="">
+                    <div class="creation">
+                        Creation of <span>Jules Wyvern</span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

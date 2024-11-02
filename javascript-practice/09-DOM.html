@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM</title>
+</head>
+<body>
+  
+  <button onclick="
+    document.querySelector('.js-options').innerHTML = 'You chose: heads';
+    
+    ">
+    heads
+  </button>
+  <button onclick="
+    document.querySelector('.js-options').innerHTML = 'You chose: tails';
+
+  ">tails</button>
+
+  <p class="js-options"></p>
+
+  <input class="js-input-value" onkeydown="
+  event.key
+  if (event.key === 'Enter') {
+    yes();
+  }
+  
+  ">
+  <button onclick="
+  yes();
+  ">submit</button>
+
+  <p class="js-value"></p>
+  
+
+  <input class="js-cost">
+
+  <button onclick="
+  let cost = Number(document.querySelector('.js-cost').value); 
+     
+
+  document.querySelector('.js-total-cost').innerHTML = `$${Math.round((cost + 10))}`
+
+  "
+  >Calculate</button>
+  <p class="js-total-cost"></p>
+  <script>
+    
+    function yes() {
+      const value = document.querySelector('.js-input-value').value; 
+
+      document.querySelector('.js-value').innerHTML = `Your Name is: ${value}`;
+    }
+      
+
+  </script>
+</body>
+</html>

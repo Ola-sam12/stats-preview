@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Result Summary Component</title>
+    <style>
+        body{
+            background-image: url(image/favicon-32x32.png);
+        }
+        .container{
+            background-color: white;
+            position:fixed;
+            top:50px;
+            right: 300px;
+            bottom: 50px;
+            left: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .result-container{
+            background-color: hsl(241, 81%, 54%);
+            border-radius: 20px;
+            width: auto;
+        }
+        .result-header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: hsl(241, 100%, 89%);
+            margin-bottom: 25px;           
+        }
+        .result{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color:hsla(241, 72%, 46%, 1)            ;
+            height: 160px;
+            width: 160px;
+            border-radius: 80px;
+        }
+        .blue{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 45px 20px 45px;
+        }
+        .gotten-score{
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        .overall-score{
+            color:  hsl(241, 100%, 89%);
+            font-size: 12px;
+            word-spacing: 2px;
+            font-weight: bold;
+        }
+        .comment{
+            color: white;
+            margin: 20px 0 0 0;
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .text{
+            text-align: center;
+            width: 190px;
+            color: hsl(241, 100%, 89%);
+            font-size: 15px;
+        }
+        .summary-header{
+           font-weight: bold;
+           color: hsl(224, 30%, 27%);
+           margin-bottom: 25px;
+        }
+        .summary-container{
+            background-color: white;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            border-radius: 20px;
+            box-shadow: 1px 1px 10px rgba(20, 33, 216, 0.1);
+        }
+       .reaction-score{
+        background-color: hsl(0, 100%, 67%, 0.09);
+        color:  hsl(0, 100%, 67%);
+        
+    }
+    .memory-score{
+        background-color: hsl(39, 100%, 56%, 0.09);
+        color:  hsl(39, 100%, 56%);
+    }
+    .verbal-score{
+        background-color: hsl(166, 100%, 37%, 0.09);
+        color:hsl(166, 100%, 37%);
+    }
+    .visual-score{
+        background-color: hsl(234, 85%, 45%, 0.09);
+        color:hsl(234, 85%, 45%);
+    }
+    span{
+        color: hsl(224, 30%, 27%);
+        font-weight: bold;
+        margin: 0;
+    }
+        .score{
+        color: grey;
+        margin: 0;
+        text-align: right;
+    }
+    .memory-score,
+    .verbal-score,
+    .reaction-score,
+    .visual-score{
+        padding: 10px 10px 10px 10px;
+        margin-bottom: 15px;
+        display: flex;
+        width: 190px;
+        justify-content: space-between;
+        border-radius: 5px;
+    }
+    .memory-score div,
+    .verbal-score div,
+    .reaction-score div,
+    .visual-score div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .memory-score div p,
+    .verbal-score div p,
+    .reaction-score div p,
+    .visual-score div p{
+        margin: 0 0 0 8px;
+        font-weight: bold;
+    }
+    button{
+        margin-top: 20px;
+        background-color: hsl(224, 30%, 27%);
+        color: white;
+        padding: 13px 0 13px 0;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+    }
+    button:active{
+        background-color:hsl(241, 81%, 54%);
+    }
+    .white{
+        display: flex;
+        flex-direction: column;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 20px;        
+    }
+
+
+    @media (max-width:500px) {
+        body{
+            background-color: black;
+            background-image: none;
+        }
+        .container{
+            background-color: black;
+            position: absolute;
+            top:0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .summary-container{
+            display: flex;
+            flex-direction:column-reverse;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            
+        }
+        .result-container{
+            border-bottom-right-radius: 24px;
+            border-bottom-left-radius: 24px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .result{
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+        }
+        .blue,.white{
+            padding: 0 30px 20px 30px;
+        }
+        .result-header{
+            margin-bottom: 15px;
+        }
+        .text{
+            width: 220px;
+        }
+    
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+            <div class="summary-container"> 
+                <div class="white">
+                    <p class="summary-header">Summary</p>
+                <div class="reaction-score">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#F55" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.833 8.333V2.5l-6.666 9.167h5V17.5l6.666-9.167h-5Z"/></svg>
+                     <p>Reaction</p></div>
+                 <p class="score"><span>80</span> / 100</p>
+                </div>
+                <div class="memory-score">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#FFB21E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.833 11.667a2.5 2.5 0 1 0 .834 4.858"/><path stroke="#FFB21E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M3.553 13.004a3.333 3.333 0 0 1-.728-5.53m.025-.067a2.083 2.083 0 0 1 2.983-2.824m.199.054A2.083 2.083 0 1 1 10 3.75v12.917a1.667 1.667 0 0 1-3.333 0M10 5.833a2.5 2.5 0 0 0 2.5 2.5m1.667 3.334a2.5 2.5 0 1 1-.834 4.858"/><path stroke="#FFB21E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M16.447 13.004a3.334 3.334 0 0 0 .728-5.53m-.025-.067a2.083 2.083 0 0 0-2.983-2.824M10 3.75a2.085 2.085 0 0 1 2.538-2.033 2.084 2.084 0 0 1 1.43 2.92m-.635 12.03a1.667 1.667 0 0 1-3.333 0"/></svg>
+                        <p>Memory</p></div>
+                    <p class="score"><span>92</span> / 100</p>
+                </div>
+                <div class="verbal-score">                   
+                   <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#00BB8F" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M7.5 10h5M10 18.333A8.333 8.333 0 1 0 1.667 10c0 1.518.406 2.942 1.115 4.167l-.699 3.75 3.75-.699A8.295 8.295 0 0 0 10 18.333Z"/></svg>
+                     <p>Verbal</p></div>
+                    <p class="score"><span>61</span> / 100</p>
+                </div>
+                <div class="visual-score">                    
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#1125D6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10 11.667a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334Z"/><path stroke="#1125D6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M17.5 10c-1.574 2.492-4.402 5-7.5 5s-5.926-2.508-7.5-5C4.416 7.632 6.66 5 10 5s5.584 2.632 7.5 5Z"/></svg>
+                        <p>visual</p></div>
+                    <p class="score"><span>72</span> / 100</p>
+                </div>
+                <button>Continue</button>
+            </div>
+            <div class="result-container">
+                <div class="blue">
+                    <p class="result-header">Your Result</p>
+                <div class="result">
+                    <div class="gotten-score">76</div>
+                    <div class="overall-score"> of 100</div>
+                </div>
+                <p class="comment">Great</p>
+                <p class="text">You scored higher than 65% of 
+                    the people who have taken these 
+                    tests
+                </p>
+                </div>
+            </div> 
+         </div>
+    </div>
+</body>
+</html>

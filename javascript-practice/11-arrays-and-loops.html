@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>arrays and loops</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    let i = 1;
+
+    while (i <= 10) {
+      console.log(i);
+      i++;
+    }
+
+      const nums = [10, 20, 30];
+
+      nums[0] = 99;
+      console.log(nums);
+      
+
+      function getValue(array) {
+        const lastIndex = array.length - 1;
+        return array[lastIndex];
+      }
+      console.log(getValue([1, 20, 24, 22, 5]));
+      console.log(getValue(['hi', 'hello', 'hey']));
+    
+
+      let i = 2;
+
+      while (i <= 10) {
+        console.log(i);
+        i += 2;
+      }
+      
+          const array = [1, 2, 3]
+
+          for (let i = 0; i < array.length; i++ ) {
+           const nums = array[i]
+           console.log(nums + 1);
+          } 
+            
+
+          let i = 5;
+
+          while(i >= 0) {
+            console.log(i);
+            i--;
+          }
+
+           for(let i = 5; i >= 0; i--) {
+              console.log(i);
+            }
+            
+           
+          function addOne(array) {
+            const result = [];
+
+              for (let i = 0; i < array.length; i++) {
+                result.push(array[i] + 1);
+              }
+
+              return result;
+           }
+        
+          console.log(addOne([1, 2, 3]));
+          console.log(addOne([-1, 0, 1, 99]));
+           
+
+          function addNum(array, num) {
+            const result = [];
+
+            for (let i = 0; i < array.length; i++) {
+              result.push(array[i] + num);
+            }
+
+            return result;
+          }
+            
+          
+          console.log(addNum([1, 2, 3], 2));
+          console.log(addNum([1, 2, 3], 3));
+          console.log(addNum([-2, -1, 0, 99], 2));
+          
+
+          function addArray(array1, array2) {
+            const result = [];
+
+            for (let i = 0; i < array1.length; i++) {
+              result.push(array1[i] + array2[i]);
+            }
+
+            return result;
+          }
+
+          console.log(addArray([1, 1, 2], [1, 1, 3]));
+          console.log(addArray([1, 2, 3], [4, 5, 6]));
+          
+
+          function countPositive(nums) {
+
+            let result = 0;
+
+            for (let i = 0; i < nums.length; i++) {
+               if (nums[i] > 0) {
+                result++
+               }
+            }
+
+            return result; 
+          }
+
+          console.log(countPositive([1, -3, 5]));
+          console.log(countPositive([-2, 3, -5, 7, 10]));
+          
+          
+
+          function minMax(nums) {
+            let result = {
+              min: null,
+              max: null
+            } 
+
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] < 0) {
+                  result.min = nums[i]
+                } 
+
+                if (nums[i] > 0) {
+                  result.max = nums[i]
+                } 
+            } 
+            return result;
+          };
+
+          console.log(minMax([1, -3, 5]));
+          console.log(minMax([-2, 3, -5, 7, 10]));
+          console.log(minMax([]));
+          console.log(minMax([3]));
+          
+
+            function countWords(words) {
+                let result = {};
+                
+                  for (let i = 0; i < words.length; i++) {
+                    const word = words[i];
+
+                    if (!result[word]) {
+                      result[word] = 1;
+                    } else {
+                      result[word]++;
+                    }
+                  }
+                  return result;
+            }
+
+            console.log(countWords(['apple', 'grape', 'apple', 'apple', 'grape', 'grape', 'grape']));
+            */
+
+            function select(array) {
+
+              for (let i = 0; i < array.length; i++) {
+                const word = array[i]
+
+                if (word === 'search') {
+                  console.log(array[2]);
+                  break;
+                } else {
+                  console.log(array[-1]);
+                }
+            }
+          }
+          console.log(select(['hello', 'world', 'search', 'good', 'search']));
+          console.log(select(['not', 'found']));
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>function practice</title>
+  </head>
+  <body>
+    
+    <script>
+         /*
+         function greet (name) {
+          console.log(`hello ${name}`);
+
+          if (!name) {
+          console.log('hi there!');
+         }  
+         }
+
+         greet();
+
+        function convertToFahrenheit (celsius) {
+            return (celsius * 9 / 5) + 32;
+          }
+        
+            function convertToCelsius (fahrenheit) {
+              return  (fahrenheit - 32) * 5 / 9;
+            }
+
+            function convertTemperature(degrees, unit) {
+          if (unit === 'C') {
+              const result = convertToFahrenheit(degrees);
+              return `${result}F`;
+            } else if (unit === 'F') {
+              const result = convertToCelsius(degrees);
+              return `${result}C`;
+          }
+      }
+
+          console.log(convertTemperature(25, 'C'));
+          console.log(convertTemperature(86, 'F'));
+         */
+
+          function convertLenght (lenght, from, to) {
+           if (from === 'miles' && to === 'km') {
+            return `${lenght * 1.6}${to}`;
+
+          } else if (from === 'km' && to === 'miles') {
+            return `${lenght / 1.6}${to}`;
+
+          } else if (from === 'km' && to === 'km') {
+            return `${lenght * 1}${to}`;
+
+          } else if (from === 'miles' && to === 'km') {
+            return `${lenght * 1.6}${to}`;
+
+          } else if (from === 'miles' && to === 'ft') {
+            return `${lenght * 5280}${to}`;
+
+          } else if (from === 'km' && to === 'ft') {
+            return `${lenght * 3281}${to}`;
+
+          } else if (from === 'ibs' && to === 'ibs') {
+            return `invalid unit:${to}`;
+          }
+        }
+          console.log(convertLenght (50, 'miles', 'km' ));
+          console.log(convertLenght (32, 'km', 'miles'));
+          console.log(convertLenght (50, 'km', 'km'));
+
+          console.log(convertLenght (5, 'miles', 'km'));
+          console.log(convertLenght (5, 'miles', 'ft'));
+          console.log(convertLenght (5, 'km', 'ft'));
+          
+          console.log(convertLenght (5, 'ibs', 'ibs'));
+
+    </script>
+  </body>
+</html>
