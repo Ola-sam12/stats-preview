@@ -7,11 +7,11 @@
   <input type="text" class="js-value">
   <button onclick="
     totalCost();
-  ">Calculate</button>
+  " class="js-calculate-button">Calculate</button>
   <p class="js-total"></p>
 
   <input type="text" placeholder="Type Something" onkeyup="
-    keyEvent (event)
+    keyEvent(event)
   ">
   <p class="js-keyup"></p>
   <script>
@@ -21,11 +21,19 @@
     }
 
     function totalCost () {
-      const costValue = Number(document.querySelector('.js-value').value);
-      const document.querySelector('.js-total').innerHTML = `$${Math.round(costValue + 10) }`
+      let costValue = Number(document.querySelector('.js-value').value);
+      
+      if (costValue < 40) {
+       costValue += 10
+      } 
+       document.querySelector('.js-total').innerHTML = `$${Math.round(costValue) }`
     }
-
-
+       
+     document.body.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        totalCost();
+      }
+     });
   </script>
 </body>
 </html>

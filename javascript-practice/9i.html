@@ -3,6 +3,7 @@
 <head>
   <title>10 exercise</title>
   <style>
+    
     .toggle-button{
       background-color: rgb(230, 230, 230);;
       color: black;
@@ -16,11 +17,29 @@
       background-color: black;
       color: white;
     }
-    
+    .subscribe-button{
+      background-color: black;
+      color: white;
+      border: none;
+      font-family: arial;
+      padding: 10px 17px;
+      border-radius: 19px;
+      cursor: pointer;
+    }
+    .is-subscribe{
+      background-color: rgb(230, 230, 230);
+      color: black;
+    }
+  
   </style>
 
 </head>
 <body>
+
+  <button onclick="
+    subscribeButton();
+    " class="js-subscribe-button subscribe-button">subscribe</button>
+  
  <button onclick="
   testingButton();
   " class="js-game-button toggle-button">
@@ -31,8 +50,20 @@
   " class="js-game-button toggle-button">
   Music
 </button>
-
    <script>
+
+    function subscribeButton() {
+      const buttonElem = document.querySelector('.js-subscribe-button')
+
+      if (buttonElem.innerText === 'subscribe') {
+      buttonElem.innerText = 'subscribed'
+      buttonElem.classList.add('is-subscribe')
+      } else {
+      buttonElem.innerText = 'subscribe'
+      buttonElem.classList.remove('is-subscribe')
+      }
+    }
+    
   function testingButton() {
     const buttonElement = document.querySelector('.js-game-button');
 
@@ -42,6 +73,7 @@
       buttonElement.classList.remove('is-toggle');
     }
   }
+  
    </script>
 </body>
 </html>

@@ -8,16 +8,19 @@
   <button onclick="
   playGame();
   onPage();
+  document.querySelector('.js-options').innerHTML = 'You choose: heads'
     ">
     heads
   </button>
   
   <button onclick="
   playGame();
+  onPage();
+  document.querySelector('.js-options').innerHTML = 'You choose: tails';
   ">
     tails
   </button>
-
+  <p class="js-options"></p>
   <p class="js-result"></p>
   <p class="js-score"></p>
 
@@ -26,6 +29,7 @@
   score.wins = 0,
   score.losses = 0
    localStorage.removeItem('score')
+   onPage();
   ">Rest Button</button>
 </p>
 
@@ -35,6 +39,7 @@
           losses: 0
         };
 
+        console.log(score);
         /*
       if (score === null) {
         score = {
@@ -43,31 +48,41 @@
         }
       }
       */
-     onPage();
      function onPage() {
       const predict = playGame();
         document.querySelector('.js-result').innerHTML = `${predict}`
 
         document.querySelector('.js-score'). innerHTML = `wins: ${score.wins} losses: ${score.losses}`;
      };
-      
+     
+       onPage();
+
 
       function playGame(predict) {
         const randomNumber = Math.random();
 
-        let result = randomNumber <= 0.5 ? 'heads' : 'tails';
+        let result = '';
 
-        console.log(predict = result === 'heads' ? 'you win' : 'you lose');
+        if (randomNumber <= 0.5) {
+          result = 'heads';
+        } else {
+          result = 'tails';
+        };
+
+        if (result === 'heads') {
+          predict = 'you win'
+        } else {
+          predict = 'you lose'
+        };
 
         if (predict === 'you win') {
-          score.wins++;
+          score.wins++
         } else {
-          score.losses++;
-        }
-        
-       localStorage.setItem('score', JSON.stringify(score));
+          score.losses++
+        };
 
-       return predict;
+        return predict;
+        localStorage.setItem('score', JSON.stringify(score));
       };
        
 
